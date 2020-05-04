@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+- 13.2
+cache: npm
+deploy:
+  provider: s3
+  cleanup: true
+  skip_cleanup: true
+  access_key_id: AKIAZIUCQ6FCOQLJIBPD
+  secret_access_key:
+    secure: U8tq/0s73/mK/sM5Kp7gPlj0LjNF0WmynrGNaUR9+XSgQt2jJTR6g087o+avVIJ0g8oJzdN338r1b6qT9D7UYIy4NBkQv1K1wFZD4ghBY//XA/0ilQMXzq9rWNn65HiQ4NXfPUbJi8I5gARiM58zhwO7K1TIp/RflEjeI9wATvOJoO0APFZo1qj6N0CzhmVr3SFlHbc7+mci4V9DtbK56J+sa1kvmuLdALzNzb1J+BUH4f2LvDhIL06Hq7wORebkxJvWmHH1u5L81Lbb3jxxGE5aL/uNq6TAosfUJQEO1x5HusVlQYhvnkYgSo24EQDHvHJCDSKkFzUXwuY1JP4czjtMBVe5XhgVPy9OBbCcpvEfRrmRr0rpGpzWV0zLUFLcGScP9fukZktXAfiarXX42GFuJOlS+zw2CAuUlSjsPQBdhureFLY6ysNCt5Fm4I6F+YIfVqi4DtTymOYovCsmwfXGNepI0wiH+Jlk+oVKapPsuWyzz0WA5ZaQHHY7QkujDy8ix3xXtCzPyyZMc5gPUwCut9zHNxmY2NI7Mf4MTvgGkwPuxAi1D93B7/ovdKFKprbymK9GeUj4H9drCD4yRXM4+d/XX5E6CSZvyUw1tmNbmWdnDsRw3Ho+2nUz8N1xEDNKv9AWtXdbJioReMkExXQ7y2cnnEewf7LuA3amDHQ=
+  bucket: alpheios-misc-dev
+  region: us-east-2
+  local_dir: "."
+  upload_dir: treebank-test-page
+  acl: public_read
+  cache_control: no-cache
+  on:
+    repo: alpheios-project/treebank-test-page
+    branch: master
