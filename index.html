@@ -32,7 +32,7 @@
 
 <body
     data-alpheios_tb_app="perseids-treebank-template"
-    data-alpheios_tb_app_version="2.2.0" data-alpheios_tb_app_url="https://trees.alpheios.net/embed/DOC/SENTENCE">
+    data-alpheios_tb_app_version="2.2.0" data-alpheios_tb_app_url="https://perseids-publications.github.io/treebank-template/embed/DOC/SENTENCE">
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function(event) {
           import ('https://cdn.jsdelivr.net/npm/alpheios-embedded@3.1.6-qa.20200514440/dist/alpheios-embedded.js').then(embedLib => {
@@ -109,7 +109,7 @@
       <ul>
         <li><code>data-alpheios_tb_app="perseids-treebank-template"</code></li>
         <li><code>data-alpheios_tb_app_version="2.2.0"</code> (specify whichever version of the template you are using)</li>
-        <li><code>data-alpheios_tb_url=https://you.github.io/repo-name/embed/DOC/SENTENCE</code> (use the appopriate values for your repository)
+        <li><code>data-alpheios_tb_url=https://your.github.io/repo-name/embed/DOC/SENTENCE</code> (use the appopriate values for your repository)
       </ul>
     </blockquote>
     <details>
@@ -118,7 +118,7 @@
         <body
           data-alpheios_tb_app="perseids-treebank-template"
           data-alpheios_tb_app_version="2.2.0"
-          data-alpheios_tb_app_url="https://alpheios-project.github.io/alpheios-trees/embed/DOC/SENTENCE">
+          data-alpheios_tb_app_url="https://perseids-publications.github.io/treebank-template/embed/DOC/SENTENCE">
         </textarea>
       </details>
 
@@ -130,7 +130,7 @@
     <details>
       <summary>Example HTML</summary>
       <textarea cols="200" rows="1">
-        <div lang="lat" class="alpheios-enabled" data-alpheios_tb_doc="phi0959.phi006.alpheios-text-lat1">
+        <div lang="lat" class="alpheios-enabled" data-alpheios_tb_doc="on-the-murder-of-eratosthenes-1-50/">
       </textarea>
     </details>
 
@@ -140,8 +140,9 @@
       that contains the sentence.</p>
     <details>
       <summary>Example HTML</summary>
-      <textarea cols="200" rows="1">
-        <p data-alpheios_tb_sent="1">>πολλὰ δ᾽ ὅ γ᾽ ἐν πόντῳ πάθεν ἄλγεα ὃν κατὰ θυμόν,</p>
+      <textarea cols="200" rows="2">
+        <p data-alpheios_tb_sent="1">περὶ πολλοῦ ἂν ποιησαίμην, ὦ ἄνδρες, τὸ τοιούτους ὑμᾶς ἐμοὶ δικαστὰς περὶ τούτου τοῦ πράγματος γενέσθαι,
+          οἷοίπερ ἂν ὑμῖν αὐτοῖς εἴητε τοιαῦτα πεπονθότες·</p>
       </textarea>
     </details>
 
@@ -152,8 +153,9 @@
       The <code>data-alpheios_tb_word</code> attribute can be used to do this.
     <details>
       <summary>Example HTML</summary>
-      <textarea cols="200" rows="1">
-        <p data-alpheios_tb_sent="1">πολλὰ δ᾽ ὅ γ᾽ ἐν <span data-alpheios_tb_word="15">πόντῳ</span> πάθεν ἄλγεα ὃν κατὰ θυμόν,</p>
+      <textarea cols="200" rows="2">
+        <p data-alpheios_tb_sent="1">περὶ πολλοῦ ἂν ποιησαίμην, ὦ <span data-alpheios_tb_word="7">ἄνδρες</span>, τὸ τοιούτους ὑμᾶς ἐμοὶ δικαστὰς περὶ τούτου τοῦ πράγματος γενέσθαι,
+          οἷοίπερ ἂν ὑμῖν αὐτοῖς εἴητε τοιαῦτα πεπονθότες·</p>
       </textarea>
     </details>
 
@@ -165,106 +167,56 @@
 
     <h3>Text and treebank aligned by sentence.</h3>
     <div class="demo">
-      <p><em>(2 separate sentences, split after "rudis:", enclytics with multiple treebank references: "indigestaque", "nec" and "congestaque")</em></p>
+      <p>This sentence has the following characteristics:
+        <ul>
+          <li>The word, οὐδὲ, is an enclytic that Arethusa automatically correctly maps to multiple treebank tokens.</li>
+          <li>The word, καὶ, is repeated three times and Arethusa disambiugates by context.</li>
+        </ul>
+      </p>
+      <div lang="grc" class="alpheios-enabled" data-alpheios_tb_doc="on-the-crown-1-50" data-alpheios_tb_sent="1">
+        <p data-alpheios_tb_sent="2">τοῦτο δ᾽ ἐστὶν οὐ μόνον τὸ μὴ προκατεγνωκέναι μηδέν, οὐδὲ τὸ τὴν εὔνοιαν ἴσην ἀποδοῦναι,
+          ἀλλὰ τὸ καὶ τῇ τάξει καὶ τῇ ἀπολογίᾳ, ὡς βεβούληται καὶ προῄρηται τῶν ἀγωνιζομένων ἕκαστος, οὕτως ἐᾶσαι χρήσασθαι.
+        </p>
+      </div>
+      <details>
+      <summary>Example HTML</summary>
+      <textarea cols="200" rows="7">
+<div lang="grc" class="alpheios-enabled" data-alpheios_tb_doc="on-the-crown-1-50" data-alpheios_tb_sent="1">
+  <p data-alpheios_tb_sent="2">τοῦτο δ᾽ ἐστὶν οὐ μόνον τὸ μὴ προκατεγνωκέναι μηδέν, οὐδὲ τὸ τὴν εὔνοιαν ἴσην ἀποδοῦναι,
+    ἀλλὰ τὸ καὶ τῇ τάξει καὶ τῇ ἀπολογίᾳ, ὡς βεβούληται καὶ προῄρηται τῶν ἀγωνιζομένων ἕκαστος, οὕτως ἐᾶσαι χρήσασθαι.
+  </p>
+</div>
+        </textarea>
+      </details>
+    </div>
 
-      <div lang="lat" class="alpheios-enabled" data-alpheios_tb_doc="phi0959.phi006.alpheios-text-lat1" data-alpheios_tb_sent="1">
-        <p data-alpheios_tb_sent="3">Ante mare et terras et quod tegit omnia caelum</p>
-        <p data-alpheios_tb_sent="3">unus erat toto naturae vultus in orbe,</p>
-        <p><span data-alpheios_tb_sent="3">quem dixere chaos :</span> <span data-alpheios_tb_sent="4">rudis indigestaque moles</span></p>
-        <p data-alpheios_tb_sent="4">nec quicquam nisi pondus iners congestaque eodem</p>
-        <p data-alpheios_tb_sent="4">non bene iunctarum discordia semina rerum.</p>
+    <h3>Text and treebank aligned by sentence, with additional select word-level specificity.</h3>
+    <div class="demo">
+      <p>This text has the following characteristics:
+        <ul>
+          <li>The phrase μὲν—οὐ is mapped to three tokens in the treebank with the <code>data-alpheios_tb_word</code>
+            attribute. Additionally, default Alpheios selection behavior which normally splits on punctuation has
+            been overridden with the <code>data-alpheios-word-node</code> attribute.
+          </li>
+        </ul>
+      </p>
+      <div lang="grc" class="alpheios-enabled" data-alpheios_tb_doc="on-the-crown-1-50" data-alpheios_tb_sent="1">
+        <p data-alpheios_tb_sent="4"> οὐ γάρ ἐστιν ἴσον νῦν ἐμοὶ τῆς παρ᾽ ὑμῶν εὐνοίας διαμαρτεῖν
+            καὶ τούτῳ μὴ ἑλεῖν τὴν γραφήν, ἀλλ᾽ ἐμοὶ <span data-alpheios-word-node="exact" data-alpheios_tb_word="21 22 23">μὲν—οὐ</span> βούλομαι δυσχερὲς
+            εἰπεῖν οὐδὲν ἀρχόμενος τοῦ λόγου, οὗτος δ᾽ ἐκ περιουσίας μου κατηγορεῖ.
+        </p>
       </div>
       <details>
         <summary>Example HTML</summary>
         <textarea cols="200" rows="7">
- <div lang="lat" class="alpheios-enabled" data-alpheios_tb_doc="phi0959.phi006.alpheios-text-lat1" data-alpheios_tb_sent="1">
-   <p data-alpheios_tb_sent="3">Ante mare et terras et quod tegit omnia caelum</p>
-   <p data-alpheios_tb_sent="3">unus erat toto naturae vultus in orbe,</p>
-   <p><span data-alpheios_tb_sent="3">quem dixere chaos :</span> <span data-alpheios_tb_sent="4">rudis indigestaque moles</span></p>
-   <p data-alpheios_tb_sent="4">nec quicquam nisi pondus iners congestaque eodem</p>
-   <p data-alpheios_tb_sent="4">non bene iunctarum discordia semina rerum.</p>
- </div>
-        </textarea>
-      </details>
-    </div>
-
-    <div class="demo">
-      <p><em>(Same word 'καὶ' repeated twice in a single sentence, Arethusa findWord disamibugates by context.)</em></p>
-      <div lang="grc" class="alpheios-enabled" data-alpheios_tb_doc="tlg0012.tlg002.alpheios-text-grc1.1" data-alpheios_tb_sent="2185541">
-        <p data-alpheios_tb_sent="2185542">πολλῶν δ᾽ ἀνθρώπων ἴδεν ἄστεα καὶ νόον ἔγνω,</p>
-        <p data-alpheios_tb_sent="2185542">πολλὰ δ᾽ ὅ γ᾽ ἐν πόντῳ πάθεν ἄλγεα ὃν κατὰ θυμόν,</p>
-        <p data-alpheios_tb_sent="2185542">ἀρνύμενος ἥν τε ψυχὴν καὶ νόστον ἑταίρων.</p>
-      </div>
-      <details>
-        <summary>Example HTML</summary>
-        <textarea cols="200" rows="5">
- <div lang="grc" class="alpheios-enabled" data-alpheios_tb_doc="tlg0012.tlg002.alpheios-text-grc1.1" data-alpheios_tb_sent="2185541">
-  <p data-alpheios_tb_sent="2185542">πολλῶν δ᾽ ἀνθρώπων ἴδεν ἄστεα καὶ νόον ἔγνω,</p>
-  <p data-alpheios_tb_sent="2185542">πολλὰ δ᾽ ὅ γ᾽ ἐν πόντῳ πάθεν ἄλγεα ὃν κατὰ θυμόν,</p>
-  <p data-alpheios_tb_sent="2185542">ἀρνύμενος ἥν τε ψυχὴν καὶ νόστον ἑταίρων.</p>
-</div>
-        </textarea>
-      </details>
-      </div>
-
-    <h3>Text and treebank aligned by sentence, with additional select word-level specificity.</h3>
-    <div class="demo">
-      <p><em>(The word 'πόντῳ' has been specifically aligned at the word level.)</em></p>
-      <div lang="grc" class="alpheios-enabled" data-alpheios_tb_doc="tlg0012.tlg002.alpheios-text-grc1.1" data-alpheios_tb_sent="2185541">
-        <p data-alpheios_tb_sent="2185542">πολλῶν δ᾽ ἀνθρώπων ἴδεν ἄστεα καὶ νόον ἔγνω,</p>
-        <p data-alpheios_tb_sent="2185542">πολλὰ δ᾽ ὅ γ᾽ ἐν <span data-alpheios_tb_word="15">πόντῳ</span> πάθεν ἄλγεα ὃν κατὰ θυμόν,</p>
-        <p data-alpheios_tb_sent="2185542">ἀρνύμενος ἥν τε ψυχὴν καὶ νόστον ἑταίρων.</p>
-      </div>
-      <details>
-        <summary>Example HTML</summary>
-        <textarea cols="200" rows="5">
-<div lang="grc" class="alpheios-enabled" data-alpheios_tb_doc="tlg0012.tlg002.alpheios-text-grc1.1" data-alpheios_tb_sent="2185541">
-  <p data-alpheios_tb_sent="2185542">πολλῶν δ᾽ ἀνθρώπων ἴδεν ἄστεα καὶ νόον ἔγνω,</p>
-  <p data-alpheios_tb_sent="2185542">πολλὰ δ᾽ ὅ γ᾽ ἐν <span data-alpheios_tb_word="15">πόντῳ</span> πάθεν ἄλγεα ὃν κατὰ θυμόν,</p>
-  <p data-alpheios_tb_sent="2185542">ἀρνύμενος ἥν τε ψυχὴν καὶ νόστον ἑταίρων.</p>
+<div lang="grc" class="alpheios-enabled" data-alpheios_tb_doc="on-the-crown-1-50" data-alpheios_tb_sent="1">
+  <p data-alpheios_tb_sent="4"> οὐ γάρ ἐστιν ἴσον νῦν ἐμοὶ τῆς παρ᾽ ὑμῶν εὐνοίας διαμαρτεῖν
+      καὶ τούτῳ μὴ ἑλεῖν τὴν γραφήν, ἀλλ᾽ ἐμοὶ <span data-alpheios-word-node="exact" data-alpheios_tb_word="21 22 23">μὲν—οὐ</span> βούλομαι δυσχερὲς
+      εἰπεῖν οὐδὲν ἀρχόμενος τοῦ λόγου, οὗτος δ᾽ ἐκ περιουσίας μου κατηγορεῖ.
+  </p>
 </div>
         </textarea>
       </details>
     </div>
-
-    <h3>Single text word maps to multiple treebank tokens</h3>
-    <div class="demo">
-      <p><em>Enclytics identified and retrieved by Arethusa findWord (indigestaque, nec and congestaque)</em></p>
-      <div lang="lat" class="alpheios-enabled" data-alpheios_tb_doc="phi0959.phi006.alpheios-text-lat1" data-alpheios_tb_sent="1">
-        <p><span data-alpheios_tb_sent="3">quem dixere chaos :</span> <span data-alpheios_tb_sent="4">rudis indigestaque moles</span></p>
-        <p data-alpheios_tb_sent="4">nec quicquam nisi pondus iners congestaque eodem</p>
-        <p data-alpheios_tb_sent="4">non bene iunctarum discordia semina rerum.</p>
-      </div>
-      <details>
-        <summary>Example HTML</summary>
-        <textarea cols="200" rows="5">
-<div lang="lat" class="alpheios-enabled" data-alpheios_tb_doc="phi0959.phi006.alpheios-text-lat1" data-alpheios_tb_sent="1">
-  <p><span data-alpheios_tb_sent="3">quem dixere chaos :</span> <span data-alpheios_tb_sent="4">rudis indigestaque moles</span></p>
-  <p data-alpheios_tb_sent="4">nec quicquam nisi pondus iners congestaque eodem</p>
-  <p data-alpheios_tb_sent="4">non bene iunctarum discordia semina rerum.</p>
-</div>
-        </textarea>
-      </details>
-    </div>
-
-    <div class="demo">
-      <p><em>Multi-token mapping explicitly specified with <code>data-alpheios_tb_word</code> on 'nec'</em></p>
-      <div lang="lat" class="alpheios-enabled" data-alpheios_tb_doc="phi0959.phi006.alpheios-text-lat1" data-alpheios_tb_sent="1">
-        <p><span data-alpheios_tb_sent="3">quem dixere chaos :</span> <span data-alpheios_tb_sent="4">rudis indigestaque moles</span></p>
-        <p data-alpheios_tb_sent="4"><span data-alpheios_tb_word="5 6">nec</span> quicquam nisi pondus iners congestaque eodem</p>
-        <p data-alpheios_tb_sent="4">non bene iunctarum discordia semina rerum.</p>
-      </div>
-      <details>
-        <summary>Example HTML</summary>
-        <textarea cols="200" rows="5">
-<div lang="lat" class="alpheios-enabled" data-alpheios_tb_doc="phi0959.phi006.alpheios-text-lat1" data-alpheios_tb_sent="1">
-  <p><span data-alpheios_tb_sent="3">quem dixere chaos :</span> <span data-alpheios_tb_sent="4">rudis indigestaque moles</span></p>
-  <p data-alpheios_tb_sent="4"><span data-alpheios_tb_word="5 6">nec</span> quicquam nisi pondus iners congestaque eodem</p>
-  <p data-alpheios_tb_sent="4">non bene iunctarum discordia semina rerum.</p>
-</div>
-        </textarea>
-      </details>
-    </div>
-
 </body>
 </html>
