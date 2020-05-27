@@ -17,6 +17,7 @@
               new Embedded({
                 clientId: 'embed-lib-demo-treebanks',
                 arethusaTbRefreshRetryCount: 3,
+                arethusaTbRefreshDelay: 100,
                 authEnv: null}).activate();
             }).catch(e => {
               console.error(`Import of an embedded library dependencies failed: ${e}`)
