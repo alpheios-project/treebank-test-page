@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.auth0.com/js/lock/11.14.0/lock.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alpheios-components@qa/dist/style/style-components.css"/>
+    <title>Alpheios Embedded Library Test</title>
+</head>
+
+<body>
+
+<!-- auth0Env global object is exported here -->
+<script src="../dist/auth0/env-embed.js"></script>
+
+<script type="text/javascript">
+    function trigger() {
+      return true;
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+      import ('https://cdn.jsdelivr.net/npm/alpheios-embedded@latest/dist/alpheios-embedded.js').then(embedLib => {
+        window.AlpheiosEmbed.importDependencies({ mode: 'custom', libs: { components: 'https://cdn.jsdelivr.net/npm/alpheios-components@qa/dist/alpheios-components.js' }}).then(Embedded => {
+          new Embedded({
+            clientId: 'embed-lib-test',
+            authEnv: null,
+            enableMouseMoveOverride: true,
+            triggerPreCallback: trigger
+          }).activate();
+        }).catch(e => {
+          console.error(`Import of an embedded library dependencies failed: ${e}`)
+        })
+
+      }).catch(e => {
+        console.error(`Import of an embedded library failed: ${e}`)
+      })
+    });
+</script>
+
+<div class="alpheios-enabled">
+    <div lang="lat">
+      <p>Arma virumque cano, Troiae qui primus ab oris</p>
+      <p>Italiam, fato profugus, Laviniaque venit</p>
+      <p>litora, multum ille et terris iactatus et alto</p>
+      <p>vi superum saevae memorem Iunonis ob iram;</p>
+    </div>
+</div>
+
+</body>
+</html>
